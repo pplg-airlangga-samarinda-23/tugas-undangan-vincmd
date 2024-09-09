@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    font-family: Arial, sans-serif;
+    text-align: center;
+
+}
+
+.wrapper {
+    background-color: rgb(244, 222, 179)
+}
+
+.wrap {
+    background-image: url(hi.jpg);
+}
+
+.grey-qo-regular {
+    text-align: center;
+}
+
+.bi {
+    margin: left 800%;
+    ;
+}
+
+img {
+    width: 600px;
+    height: 500px;
+}
+
+.sacramento-regular {
+    font-family: "Sacramento", cursive;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 5rem;
+}
+
+.nama {
+    font-family: "Grey Qo", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+}
+
+.bi {
+    font-family: "Sacramento", cursive;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 3rem;
+}
+
+.ki {
+    font-family: "Sacramento", cursive;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 3rem;
+}
+
+.group-1 {
+    max-width: 50%;
+    margin: 0 auto;
+    border: 1px solid black;
+    background-image: url(lo.jpg);
+    padding: auto;
+}
+
+
+.group-2 {
+    max-width: 50%;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: auto;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-inner img {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.carousel-inner img.active {
+    display: block;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.responsive {
+    width: 50%;
+    height: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .sacramento-regular {
+        font-size: 7vw;
+        /* Font lebih besar pada layar kecil */
+    }
+
+    .nama {
+        font-size: 6vw;
+    }
+
+    .bi,
+    .ki {
+        font-size: 5vw;
+    }
+}
