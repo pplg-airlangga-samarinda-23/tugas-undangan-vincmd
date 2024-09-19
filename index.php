@@ -55,6 +55,40 @@
                 </div>
             </div>
         </div>
+        <h3>Ucapan dan doa</h3>
+        <P>berikan ucapan harapan dan doa untuk mempelai</P>
+        <form action="insert.php" method="post">
+            <input type="text" name="nama" placeholder="nama" required><br>
+            <textarea name="ucapan" cols="30" rows="4" placeholder="ucapan" required></textarea><br>
+            <select name="keterangan" required>
+                <option value="" selected disabled hidden>Konfirmasi kehadiran</option>
+                <option value="1">hadir</option>
+                <option value="2">tidak hadir</option>
+                <option value="3">tidak tau</option>
+            </select>
+            <button>kirim</button>
+            <?php
+            include 'koneksi.php';
+            //menampilkan data
+            $SQL2 = "SELECT * FROM bukutamu ORDER BY ID DESC";
+            $hasil = $connection->query($SQL2);
+
+            ?>
+            <div style="margin:auto; text-align:center; height:200px; width:300px;  overflow:scroll;" class="ucapan">
+                <?php
+                while ($baris = $hasil->fetch_row()) {
+                ?>
+                    <div style="border-style:solid;border-color:red;margin:10px;">
+                        <p style="font-weight:bold;">nama:<?= $baris[1] ?></p>
+                        <P>ucapan:<?= $baris[2] ?></p>
+                        <p>keterangan:<?= $baris[3] ?></p>
+                    </div>
+                <?php
+                }
+                $hasil->free_result();
+                ?>
+            </div>
+        </form>
         <audio controls autoplay loop src="poli.mp3"></audio>
     </main>
     <script>
@@ -64,13 +98,25 @@
             day: 21, // required
             hours: 8, // Default is 0 [0-23] integer
             words: { //words displayed into the countdown
-                days: { singular: 'hari', plural: 'hari' },
-                hours: { singular: 'jam', plural: 'jam' },
-                minutes: { singular: 'menit', plural: 'menit' },
-                seconds: { singular: 'detik', plural: 'detik' }
+                days: {
+                    singular: 'hari',
+                    plural: 'hari'
+                },
+                hours: {
+                    singular: 'jam',
+                    plural: 'jam'
+                },
+                minutes: {
+                    singular: 'menit',
+                    plural: 'menit'
+                },
+                seconds: {
+                    singular: 'detik',
+                    plural: 'detik'
+                }
             },
         });
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const carousel = document.querySelector('.carousel-inner');
             const images = carousel.querySelectorAll('img');
             const prevBTN = document.querySelector('.prev');
@@ -83,13 +129,13 @@
                 currentIndex = index;
             }
 
-            prevBTN.addEventListener('click', function () {
+            prevBTN.addEventListener('click', function() {
                 let index = currentIndex - 1;
                 if (index < 0) index = images.length - 1;
                 showImage(index);
             });
 
-            nextBTN.addEventListener('click', function () {
+            nextBTN.addEventListener('click', function() {
                 let index = currentIndex + 1;
                 if (index >= images.length) index = 0;
                 showImage(index);
@@ -105,7 +151,6 @@
 
             startAutoSlide();
         });
-
     </script>
 
 </body>

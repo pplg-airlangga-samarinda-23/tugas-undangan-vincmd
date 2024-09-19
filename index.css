@@ -17,6 +17,8 @@ body {
     background-image: url(hi.jpg);
 }
 
+
+
 .grey-qo-regular {
     text-align: center;
 }
@@ -125,7 +127,6 @@ img {
 @media screen and (max-width: 600px) {
     .sacramento-regular {
         font-size: 7vw;
-        /* Font lebih besar pada layar kecil */
     }
 
     .nama {
