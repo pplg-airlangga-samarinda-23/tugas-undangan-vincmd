@@ -35,7 +35,7 @@
                     <div class="carousel-inner">
                         <img src="hi.jpg" alt="image 1" class="active">
                         <img src="mi.jpg" alt="image 2">
-                        <img src="mahiru.png" alt="image 3">
+                        <img src="pernikahan.png" alt="image 3">
                     </div>
                     <button class="prev">prev</button>
                     <button class="next">next</button>
