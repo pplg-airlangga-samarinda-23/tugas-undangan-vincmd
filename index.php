@@ -40,63 +40,68 @@
                     <button class="prev">prev</button>
                     <button class="next">next</button>
                 </div>
-                <h2>pernikahan ini dilaksanakan pada tanggal 21 bulan 2 tahun 2025</h2>
+                <h2>pernikahan ini dilaksanakan pada Tanggal 25 bulan 12 Tahun 2029</h2>
                 <div class="simply-countdown"></div>
                 <h2>Pernikahan ini dilangsungkan Di Hotel Tepian</h2>
             </div>
-        </div>
-        <div class="wrap">
-            <div class="group-2">
-                <div style="width: 100%">
-                    <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=hote%20tepian+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
-                            href="https://www.gps.ie/">
-                            lihat map</iframe>
-                </div>
-            </div>
-        </div>
-        <h3>Ucapan dan doa</h3>
-        <P>berikan ucapan harapan dan doa untuk mempelai</P>
-        <form action="insert.php" method="post">
-            <input type="text" name="nama" placeholder="nama" required><br>
-            <textarea name="ucapan" cols="30" rows="4" placeholder="ucapan" required></textarea><br>
-            <select name="keterangan" required>
-                <option value="" selected disabled hidden>Konfirmasi kehadiran</option>
-                <option value="1">hadir</option>
-                <option value="2">tidak hadir</option>
-                <option value="3">tidak tau</option>
-            </select>
-            <button>kirim</button>
-            <?php
-            include 'koneksi.php';
-            //menampilkan data
-            $SQL2 = "SELECT * FROM bukutamu ORDER BY ID DESC";
-            $hasil = $connection->query($SQL2);
 
-            ?>
-            <div style="margin:auto; text-align:center; height:200px; width:300px;  overflow:scroll;" class="ucapan">
-                <?php
-                while ($baris = $hasil->fetch_row()) {
-                ?>
-                    <div style="border-style:solid;border-color:red;margin:10px;">
-                        <p style="font-weight:bold;">nama:<?= $baris[1] ?></p>
-                        <P>ucapan:<?= $baris[2] ?></p>
-                        <p>keterangan:<?= $baris[3] ?></p>
+
+            <div class="group-2">
+                <div class="wrap">
+                    <div style="width: 100%">
+
+                        <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=hote%20tepian+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                                href="https://www.gps.ie/">
+                                lihat map</iframe>
+                        </src>
                     </div>
-                <?php
-                }
-                $hasil->free_result();
-                ?>
+                </div>
+
+
+                <h3>Ucapan dan doa</h3>
+                <P>berikan ucapan harapan dan doa untuk mempelai</P>
+                <form action="insert.php" method="post">
+                    <input type="text" name="nama" placeholder="Nama" required><br>
+                    <textarea name="ucapan" cols="30" rows="4" placeholder="ucapan" required></textarea><br>
+                    <select name="keterangan" required>
+                        <option value="" selected disabled hidden>Konfirmasi kehadiran</option>
+                        <option value="1">hadir</option>
+                        <option value="2">tidak hadir</option>
+                        <option value="3">tidak tau</option>
+                    </select>
+                    <button>kirim</button>
+                    <?php
+                    include 'koneksi.php';
+                    $SQL2 = "SELECT * FROM bukutamu";
+                    $hasil = $connection->query($SQL2);
+
+                    ?>
+                    <div style="margin:auto; text-align:center; height:200px; width:300px; overflow:scroll;" class="ucapan">
+                        <?php
+                        while ($baris = $hasil->fetch_row()) {
+                        ?>
+                            <div style="border-style:solid;border-color:red;margin:10px;">
+                                <p style="font-weight:bold;">Nama:<?= $baris[0] ?></p>
+                                <P>Ucapan:<?= $baris[1] ?></p>
+                                <p>Keterangan:<?= $baris[2] ?></p>
+                            </div>
+                        <?php
+                        }
+                        $hasil->free_result();
+                        ?>
+                    </div>
+                </form>
             </div>
-        </form>
-        <audio controls autoplay loop src="poli.mp3"></audio>
+            <audio controls autoplay loop src="poli.mp3"></audio>
     </main>
+    </div>
     <script>
         simplyCountdown('.simply-countdown', {
-            year: 2025, // required
-            month: 2, // required
-            day: 21, // required
-            hours: 8, // Default is 0 [0-23] integer
+            year: 2029, // required
+            month: 12, // required
+            day: 25, // required
+            hours: 7, // Default is 0 [0-23] integer
             words: { //words displayed into the countdown
                 days: {
                     singular: 'hari',
